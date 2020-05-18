@@ -1,35 +1,25 @@
 // REQUIRE EXPRESS
-const express = require('express');
-const connectDB = require('./models/db');
+const express = require('express')
+const connectDB = require('./models/db')
 // REQUIRE MANGOOSE
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 // CALL EXPRESS
-const app = express();
+const app = express()
 //  initiallizing Mango DB
-connectDB();
+connectDB()
 // SET STATIC
 // REQUIRE BODY PARSER
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 // REQUIRE DOTENV
-require('dotenv/config');
+require('dotenv/config')
 //Initializing Routes
-const postRoutes = require('./routes/post');
+const postRoutes = require('./routes/post')
 // SET ROUTE
-app.use('/post', postRoutes);
+app.use('/post', postRoutes)
 
-// CONNECT  TO DB
-// mongoose.connect(process.env.DB_connect, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-
-// mongoose.connection.on('connected', () =>
-//   console.log('mongoose is connected!!')
-// );
-
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 
 // SET PORT TO LISTEN
-app.listen(PORT, console.log('server is running'));
+app.listen(PORT, console.log('server is running'))
