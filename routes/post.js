@@ -28,7 +28,7 @@ router.get('/posts/:postId', async (req, res) => {
     const post = await Post.findById(req.params.postId)
     res.send(post)
   } catch (error) {
-    console.error({ message: error })
+    res.send({ message: 'error occured' })
   }
 })
 
